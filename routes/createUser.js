@@ -20,7 +20,7 @@ router.post('/', async (req, res) => {
         }
 
         const data = { user: { id: user._id, email: user.email } }
-        const token = jwt.sign(data, process.env.JWT_SECRET)
+        const token = jwt.sign(data, process.env.JWT_SECRET, { expiresIn: process.env.JWT_EXPIRES_IN })
         const info = await sendMail(email, `${process.env.HOST}/user/verify?token=${token}`)
         res.json({ success: true, message: "Account created. Please Verify your E-Mail Address." })
     } catch (error) {

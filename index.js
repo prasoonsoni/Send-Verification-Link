@@ -15,6 +15,8 @@ app.get('/', (req, res) => {
 })
 
 app.use('/user/create', require('./routes/createUser'))
+app.use('/user/verify', require('./routes/verifyUser'))
+
 app.listen(port, () => {
     console.log(`Mail Verification listening on http://localhost:${port}`)
 })
