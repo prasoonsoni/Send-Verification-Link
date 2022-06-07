@@ -14,6 +14,7 @@ app.get('/', (req, res) => {
         '<h3><a href="https://github.com/prasoonsoni/Mail-Verification" target="_blank">Visit Repository</a></h3></center>')
 })
 
+app.use('/user/create', require('./routes/createUser'))
 app.listen(port, () => {
     console.log(`Mail Verification listening on http://localhost:${port}`)
 })

@@ -8,7 +8,8 @@ const UserSchema = new Schema({
     },
     email: {
         type: String,
-        required: true
+        required: true,
+        unique:true
     },
     verified: {
         type: Boolean,
@@ -16,4 +17,4 @@ const UserSchema = new Schema({
     }
 })
 
-module.exports = new mongoose.model("User", UserSchema)
+module.exports = mongoose.model("User", UserSchema)
